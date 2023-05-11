@@ -26,18 +26,14 @@ const Home = () => {
           cursor: 'default',
         }}
       >
-        Welcome, Dear friend!
+        Welcome !
       </Typography>
       {/* <Typography
         variant="body2"
         color="#2948ad"
         sx={{ m: 5, cursor: 'default' }}
         >
-              Some text
-        This service will help you quickly and conveniently create your contact
-        book. Your contact book will have a simple interface and the most
-        necessary functions: you will be able to create a contact, delete it or
-        search by name in the contact list.
+          Some text
       </Typography> */}
     </Box>
   );
