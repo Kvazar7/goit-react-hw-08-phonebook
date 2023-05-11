@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {  register,
-  // logIn,  // logOut,  // fetchCurrentUser
-} from '../redux/auth/authServices';
+import {  register } from '../redux/auth/authServices';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
