@@ -19,6 +19,7 @@ const Home = () => {
           mt: 5,
           display: { xs: 'none', md: 'flex' },
           justifyContent: 'center',
+          marginTop: '120px',
           fontFamily: 'Roboto',
           fontWeight: 700,
           color: '#2948ad',
@@ -26,15 +27,8 @@ const Home = () => {
           cursor: 'default',
         }}
       >
-        Welcome !
+        Welcome to our contactbook !
       </Typography>
-      {/* <Typography
-        variant="body2"
-        color="#2948ad"
-        sx={{ m: 5, cursor: 'default' }}
-        >
-          Some text
-      </Typography> */}
     </Box>
   );
 };

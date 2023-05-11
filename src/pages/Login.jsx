@@ -38,6 +38,7 @@ const Login = () => {
           value={email}
           onChange={handleChange}
           sx={{
+            display: 'flex',
             mt: 5,
             ml: 5,
             width: 300,
@@ -52,6 +53,7 @@ const Login = () => {
           value={password}
           onChange={handleChange}
           sx={{
+            display: 'flex',
             mt: 5,
             ml: 5,
             width: 300,

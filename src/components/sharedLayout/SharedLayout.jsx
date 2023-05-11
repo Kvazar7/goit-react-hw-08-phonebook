@@ -1,8 +1,7 @@
 import { Outlet, NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import authSelectors from 'redux/auth/authSelectors';
-// import { Suspense } from 'react';
-
+import { Suspense } from 'react';
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -14,10 +13,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import ImportContactsOutlinedIcon from '@mui/icons-material/ImportContactsOutlined';
+import AddIcCallIcon from '@mui/icons-material/AddIcCall';
 import { UserMenu } from '../Menu';
 import { AuthNav } from '../AuthNav';
-// import Loader from 'components/Loader/loader';
+import Loader from 'components/Loader/loader';
 
 function SharedLayout() { 
   const isLoggedIn = useSelector(authSelectors.getIsLoggedin);
@@ -36,13 +35,15 @@ function SharedLayout() {
       <AppBar
         position="static"
         linear-gradient="to right, primary, secondary">
-        <Container maxWidth="xl">
+        <Container
+          maxWidth="xl"
+          border-radius="5">
           <Toolbar disableGutters>
-            <ImportContactsOutlinedIcon
+            <AddIcCallIcon
               sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
             />
             <Typography
-              variant="h6"
+              variant="h5"
               noWrap
               component="p"
               sx={{
@@ -105,7 +106,7 @@ function SharedLayout() {
                 </MenuItem>
               </Menu>
             </Box>
-            <ImportContactsOutlinedIcon
+            <AddIcCallIcon
               sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}
             />
             <Typography
@@ -149,10 +150,9 @@ function SharedLayout() {
           </Toolbar>
         </Container>
       </AppBar>
-      <Outlet />
-      {/* <Suspense fallback={<Loader />}>
+      <Suspense fallback={<Loader />}>
         <Outlet />
-      </Suspense> */}
+      </Suspense>
     </>
   );
 }

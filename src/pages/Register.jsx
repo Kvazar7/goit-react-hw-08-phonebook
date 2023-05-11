@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {  register } from '../redux/auth/authServices';
+import { register } from '../redux/auth/authServices';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
@@ -43,6 +43,7 @@ const Register = () => {
           value={name}
           onChange={handleChange}
           sx={{
+            display: 'flex',
             mt: 5,
             ml: 5,
             width: 300,
@@ -57,6 +58,7 @@ const Register = () => {
           value={email}
           onChange={handleChange}
           sx={{
+            display: 'flex',
             mt: 5,
             ml: 5,
             width: 300,
@@ -71,6 +73,7 @@ const Register = () => {
           value={password}
           onChange={handleChange}
           sx={{
+            display: 'flex',
             mt: 5,
             ml: 5,
             width: 300,

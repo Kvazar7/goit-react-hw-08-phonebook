@@ -2,17 +2,22 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { filteredContacts } from 'redux/selector'
 import ContactListItem from '../ContactList/contactlistitem';
-import css from '../ContactList/contactlist.module.css'
+import { List } from '@mui/material';
 
 const ContactList = () => {
   const contacts = useSelector(filteredContacts);
 
   return (
-    <>
+    <List>
       {contacts.length === 0 ? (
-        <h3 className={css.contactlist_ul}>There is no contact</h3>
+        <h3 style={{ textAlign: 'center', color: '#2948ad' }}
+          >There is no contact</h3>
       ) :
-        <ul className={css.contactlist_ul}>
+        <ul style={{
+          marginLeft: '0',
+          padding: '0',
+          color: '#2948ad',
+        }}>
           {contacts.map(contact => {
             return (
               <ContactListItem
@@ -25,7 +30,7 @@ const ContactList = () => {
           })}
         </ul>
       } 
-    </>
+    </List>
   );
 }
 
@@ -41,54 +46,3 @@ ContactList.propTypes = {
     })
   ),
 };
-
-// import PropTypes from 'prop-types';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { deleteContact } from 'redux/services';
-
-
-// // import { getVisibleContacts } from 'redux/selectors';
-// import { filteredContacts } from 'redux/selector'
-
-// // import authSelectors from 'redux/auth/auth-selectors';
-// import authSelectors from 'redux/auth/authSelectors'
-
-// import { List, ListItem, Button } from '@mui/material';
-
-// const ContactList = () => {
-//   const dispatch = useDispatch();
-//   const isLoggedIn = useSelector(authSelectors.getIsLoggedin);
-//   const visibleContacts = useSelector(filteredContacts);
-//   const handleDelete = id => dispatch(deleteContact(id));
-
-//   return (
-//     <List>
-//       {isLoggedIn &&
-//         visibleContacts.map(contact => (
-//           <ListItem key={contact.id} sx={{display: 'flex', justifyContent: 'space-between', maxWidth: 400, fontWeight: 500}}>
-//             {contact.name}: {contact.number}
-//             <Button
-//               variant="contained"
-//               type="button"
-//               onClick={() => {
-//                 handleDelete(contact.id);
-//               }}
-//               sx={{
-//                 ml: 5,
-//                 maxWidth: '300px',
-//               }}
-//             >
-//               Delete
-//             </Button>
-//           </ListItem>
-//         ))}
-//     </List>
-//   );
-// };
-
-// export default ContactList;
-
-// ContactList.propTypes = {
-//   value: PropTypes.array,
-//   onDeleteContact: PropTypes.func,
-// };
